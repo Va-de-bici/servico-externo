@@ -6,15 +6,13 @@ import vadebici.util.JavalinApp;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InitTest {
+public class InitTest {
+
     private final JavalinApp javalinApp = new JavalinApp();
 
-    @Test
-    void runServer() {
-        Javalin app = javalinApp.start(9000);
-
-        assertNotNull(app);
-
+    void inicializaServidor_QuandoBemSucedido() {
+        javalinApp.start(9000);
         javalinApp.stop();
     }
 }
+
