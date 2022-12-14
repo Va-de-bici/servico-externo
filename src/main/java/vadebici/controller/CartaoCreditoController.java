@@ -2,8 +2,6 @@ package vadebici.controller;
 
 import java.util.ArrayList;
 
-import org.json.JSONObject;
-
 import vadebici.form.CartaoCreditoForm;
 import io.javalin.http.Context;
 import kong.unirest.HttpResponse;

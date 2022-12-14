@@ -14,20 +14,13 @@ public class Cobranca {
 
 	public HttpResponse<JsonNode> validaCartaoCredito(CartaoCredito cartao) {
 		TransacaoCielo transacao = new TransacaoCielo("1");
-
-		transacao.Payment.setAmount(1);
-
-		transacao.Payment.setInstallments(1);
-
-		transacao.Payment.setType("CreditCard");
-
-		transacao.Payment.getCreditCard().setBrand("Master");
-
-		transacao.Payment.getCreditCard().setCardNumber(cartao.getNumero());
-
-		transacao.Payment.getCreditCard().setExpirationDate(cartao.getValidade());
-
-		transacao.Payment.getCreditCard().setSecurityCode(cartao.getCvv());
+		transacao.getPayment().setAmount(1);
+		transacao.getPayment().setInstallments(1);
+		transacao.getPayment().setType("CreditCard");
+		transacao.getPayment().getCreditCard().setBrand("Visa");
+		transacao.getPayment().getCreditCard().setCardNumber(cartao.getNumero());
+		transacao.getPayment().getCreditCard().setExpirationDate(cartao.getValidade());
+		transacao.getPayment().getCreditCard().setSecurityCode(cartao.getCvv());
 
 		HttpResponse<JsonNode> response = Unirest.post(REQUISICAO)
 				.header("Content-Type", "application/json")

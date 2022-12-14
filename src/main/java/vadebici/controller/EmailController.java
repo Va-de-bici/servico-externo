@@ -14,7 +14,7 @@ public class EmailController {
     public static void enviaEmail(Context ctx) {
         String body = ctx.body();
         Email email = JavalinJson.getFromJsonMapper().map(body, Email.class);
-        serviceEmail.enviaMensagem(Email);
+        serviceEmail.enviaMensagem(email);
         ctx.status(200);
 
     }

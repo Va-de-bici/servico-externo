@@ -6,6 +6,14 @@ public class CartaoCredito {
     private String validade;
     private String cvv;
 
+    public CartaoCredito(String nomeTitular, String numero, String validade, String cvv)    {
+		this.nomeTitular = nomeTitular;
+		this.numero = numero;
+		this.validade = validade;
+		this.cvv = cvv;
+	}
+
+    
     public String getNomeTitular() {
         return nomeTitular;
     }
