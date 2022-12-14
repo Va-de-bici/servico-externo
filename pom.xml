@@ -8,9 +8,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <sonar.projectKey>pm-grupo-va-de-bike_projeto-programacao-modular-unirio-externo</sonar.projectKey>
-        <sonar.organization>pm-grupo-va-de-bike</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>pm-2022-2-grupo-b</sonar.organization>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -88,11 +86,7 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.2.0</version>
-            </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -182,7 +176,7 @@
                 <version>${heroku-maven-plugin.version}</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
-                    <appName>va-de-bike-externo</appName>
+                    <appName>va-de-bici-externo</appName>
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
                         <web>java $JAVA_OPTS -jar target/servico-externo-1.0-jar-with-dependencies.jar</web>
@@ -194,7 +188,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${exec-maven-plugin.version}</version>
                 <configuration>
-                    <mainClass>vadebike.Main</mainClass>
+                    <mainClass>vadebici.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
