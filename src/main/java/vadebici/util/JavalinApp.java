@@ -2,7 +2,8 @@ package vadebici.util;
 
 import io.javalin.Javalin;
 import io.javalin.plugin.json.JavalinJson;
-import vadebici.controller.FuncionarioController;
+import vadebici.controller.EmailController;
+import vadebici.controller.CartaoCreditoController;
 import vadebici.exception.GenericApiException;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
@@ -11,8 +12,9 @@ public class JavalinApp {
     private final Javalin app =
             Javalin.create(config -> config.defaultContentType = "application/json")
                     .routes(() -> {
-                        path("/funcionario", () -> get(FuncionarioController::retornaFunc));
-                        path("/funcionario", () -> post(FuncionarioController::guardaFunc));
+                        path("/enviarEmail", () -> post(EmailController::enviaEmail));
+                        path("/validaCartaoDeCredito", () -> post(CartaoCreditoController::validaCartaoCredito));
+
                     }).error(500, ctx -> {
                         GenericApiException ex = new GenericApiException(500, "Ocorreu um erro durante a operação");
                         ctx.result(JavalinJson.toJson(ex));
@@ -38,3 +40,6 @@ public class JavalinApp {
         this.app.stop();
     }
 }
+
+
+
