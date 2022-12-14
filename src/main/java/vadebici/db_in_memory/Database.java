@@ -15,7 +15,7 @@ public class Database {
         limpar();
         Email email = new Email();
         email.setEmail("bruno@unirio.br");
-        email.setMensagem("Teste externo")
+        email.setMensagem("Teste externo");
         EMAIL_TABLE.put(email.getEmail(), email);
     }
 }
