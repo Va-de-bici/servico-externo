@@ -13,6 +13,8 @@ import vadebici.pagamento.Cobranca;
 
 public class CartaoCreditoController {
 
+	private CartaoCreditoController(){}
+
 	public static boolean validaCartaoCredito(Context ctx) {
 		CartaoCredito cartao = ctx.bodyAsClass(CartaoCreditoForm.class).deserialize();
 		Cobranca validacao = new Cobranca();

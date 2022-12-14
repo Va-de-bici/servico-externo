@@ -6,7 +6,6 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 
 public class Cobranca {
-	private CartaoCredito cartao;
 
 	private static final String MERCHANTID = "95061429-4514-431d-8585-befe1ae162da";
 	private static final String MERCHANTKEY = "XQHDFODQYLWBYSJEEXTCRZUJGKTYUYIESBULOZIK";

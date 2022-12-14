@@ -5,6 +5,9 @@ import vadebici.dom.*;
 import java.util.*;
 
 public class Database {
+
+    private Database(){}
+    
     public static final Map<String, Email> EMAIL_TABLE = new HashMap<>();
 
     public static void limpar() {

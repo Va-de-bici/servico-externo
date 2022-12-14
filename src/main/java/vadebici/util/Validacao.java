@@ -9,6 +9,8 @@ import vadebici.exception.GenericApiException;
 import java.util.Set;
 
 public class Validacao {
+
+    private Validacao(){}
     private static final Validator validar;
 
     static {

@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 public class Segredos {
+    private Segredos(){}
     private static Properties properties;
     private static final String EMAIL_API_KEY = "EMAIL_API_KEY";
     private static final String EMAIL_DOMAIN = "EMAIL_DOMAIN";
