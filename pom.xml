@@ -189,7 +189,7 @@
                     </processTypes>
                 </configuration>
             </plugin>
-<plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${exec-maven-plugin.version}</version>
@@ -214,7 +214,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>vadebike.Main</mainClass>
+                            <mainClass>echo.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
