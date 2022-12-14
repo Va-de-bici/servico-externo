@@ -17,7 +17,7 @@ public class CartaoCreditoForm {
 	}
 
 	public CartaoCredito deserialize(){
-		return new CreditCard(this.nomeTitular, this.numero, this.validade, this.cvv);
+		return new CartaoCredito(this.nomeTitular, this.numero, this.validade, this.cvv);
 	}
 }
 

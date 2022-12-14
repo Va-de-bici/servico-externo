@@ -1,6 +1,6 @@
 package vadebici.dom;
 
-public class Cartao {
+public class CartaoCredito {
     private String nomeTitular;
     private String numero;
     private String validade;
