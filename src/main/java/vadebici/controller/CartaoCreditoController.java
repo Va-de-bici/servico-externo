@@ -9,7 +9,8 @@ import io.javalin.http.Context;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
-import vadebici.dom.CartaoDeCredito;
+import vadebici.dom.CartaoCredito;
+import vadebici.pagamento.Cobranca;
 
 
 public class CartaoCreditoController {

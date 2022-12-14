@@ -17,4 +17,9 @@ public class TransacaoCielo
 	{
 	      public String Name;
 	}
+
+	public Pagamento getPayment() {
+		return Payment;
+	}
+
 }
