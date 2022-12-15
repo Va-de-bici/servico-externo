@@ -130,7 +130,7 @@ class ControllerTest {
 
 	@Test
     void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
-        CartaoCredito cartao = getCartao();
+        CartaoCreditoModelo cartao = getCartao();
         HttpResponse<String> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
                 .body(cartao)
                 .asString();
