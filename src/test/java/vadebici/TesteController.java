@@ -43,12 +43,12 @@ class ControllerTest {
 		app.stop();
 	}
 
-	@Test
+	/*@Test
 	void TransacaoCieloTest() {
 		TransacaoCielo cielo = new TransacaoCielo("95061429-4514-431d-8585-befe1ae162da");
 		String merchantOrderId = "95061429-4514-431d-8585-befe1ae162da";
 		assertEquals(merchantOrderId, cielo.MerchantOrderId);
-	}
+	}*/
 
 	@Test
 	void getValorPagamentoTest() {
@@ -107,6 +107,7 @@ class ControllerTest {
 
 	@Test
 	void testGetBrand() {
+		CartaoCredito cartao = new CartaoCredito();
 		cartao.setNumero("4556346904266753");
 		assertEquals("Visa", cartao.getBrand());
 	}
