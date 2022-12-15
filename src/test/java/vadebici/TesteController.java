@@ -32,6 +32,8 @@ import kong.unirest.JsonNode;
 
 class ControllerTest {
 	private static JavalinApp app = new JavalinApp();
+	private static final String BASE_URL = "http://localhost:7010";
+
 
 	@BeforeAll
 	static void init() {
