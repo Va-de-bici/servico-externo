@@ -139,18 +139,18 @@ class ControllerTest {
         assertEquals("VERIFIED", response.getBody());
     }*/
 
+	Email createEmail() {
+        Email email = new Email();
+        email.setEmail("bruno@edu.unirio.br");
+        email.setMensagem("Teste");
+        return email;
+    }
+	
 	@Test
     void enviaEmail_QuandoBemSucedido() {
         Email email = createEmail();
 		ServiceEmail serviceEmail = new ServiceEmail();
         assertDoesNotThrow(() -> serviceEmail.enviaMensagem(email));
-    }
-
-    Email createEmail() {
-        Email email = new Email();
-        email.setEmail("bruno@edu.unirio.br");
-        email.setMensagem("Teste");
-        return email;
     }
 
 }
