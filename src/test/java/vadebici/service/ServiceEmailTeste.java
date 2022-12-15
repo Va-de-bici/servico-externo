@@ -3,8 +3,7 @@ package vadebici.service;
 import org.junit.jupiter.api.Test;
 import vadebici.dom.Email;
 import vadebici.service.ServiceEmail;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 
 public class ServiceEmailTeste {
 
@@ -13,7 +12,7 @@ public class ServiceEmailTeste {
     @Test
     void enviaEmail_QuandoBemSucedido() {
         Email email = criaEmail();
-        Email emailResponse = Assertions.assertDoesNotThrow(() -> serviceEmail.enviaeMensagem(email));
+        Email emailResponse = Assertions.assertDoesNotThrow(() -> serviceEmail.enviaMensagem(email));
         Assertions.assertEquals(email.getEmail(), emailResponse.getEmail());
         Assertions.assertEquals(email.getMensagem(), emailResponse.getMensagem());
     }
