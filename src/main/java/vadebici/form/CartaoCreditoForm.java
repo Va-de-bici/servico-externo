@@ -9,7 +9,7 @@ public class CartaoCreditoForm {
 	private String validade;
 	private String cvv;
 
-	public CartaoDeCreditoForm() 
+	public CartaoCreditoForm() 
 	{
 		
 	}
