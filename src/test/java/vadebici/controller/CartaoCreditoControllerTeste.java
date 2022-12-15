@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static vadebici.modelo.CartaoModelo.*;
 
 public class CartaoCreditoControllerTeste {
     private final static JavalinApp app = new JavalinApp();
