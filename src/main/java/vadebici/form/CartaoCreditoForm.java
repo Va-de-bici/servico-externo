@@ -7,7 +7,7 @@ public class CartaoCreditoForm {
 	private String nomeTitular;
 	private String numero;
 	private String validade;
-	private String cvv;
+	public String cvv;
 
 	public CartaoCreditoForm() 
 	{
