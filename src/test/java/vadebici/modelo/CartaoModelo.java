@@ -4,7 +4,7 @@ import vadebici.dom.CartaoCredito;
 
 public class CartaoModelo {
 
-    public static Cartao getCartao() {
+    public static CartaoCredito getCartao() {
         CartaoCredito cartao = new CartaoCredito();
         cartao.setNumero("5155901222280001");
         cartao.setCvv("333");
