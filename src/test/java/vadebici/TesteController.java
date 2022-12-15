@@ -14,18 +14,18 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import controller.CartaoCreditoController;
-import controller.EmailController;
-import dom.CartaoCredito;
-import dom.Email;
-import form.CartaoCreditoForm;
-import pagamento.Cobranca;
-import pagamento.Pagamento;
-import pagamento.TransacaoCielo;
-import service.ServiceEmail;
-import util.JavalinApp;
-import util.Segredos;
-import util.Validacao;
+import vadebici.controller.CartaoCreditoController;
+import vadebici.controller.EmailController;
+import vadebici.dom.CartaoCredito;
+import vadebici.dom.Email;
+import vadebici.form.CartaoCreditoForm;
+import vadebici.pagamento.Cobranca;
+import vadebici.pagamento.Pagamento;
+import vadebici.pagamento.TransacaoCielo;
+import vadebici.service.ServiceEmail;
+import vadebici.util.JavalinApp;
+import vadebici.util.Segredos;
+import vadebici.util.Validacao;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import kong.unirest.JsonNode;
@@ -92,22 +92,25 @@ class ControllerTest {
 		String nome = cc.getNomeTitular();
 		cc.setValidade("12/2025");
 		String validade = cc.getValidade();
-		cc.setId("1");
-		String id = cc.getId();
-		assertEquals("1", id);
+		assertEquals("123", cvv);
 	}
 
 	@Test
 	void emailTest() {
 		Email e = new Email("email@mail.com", "Teste");
-		e.setId("1");
-		String id = e.getId();
 		e.setEmail("teste@mail.com");
 		String email = e.getEmail();
 		e.setMensagem("Teste teste");
 		String mensagem = e.getMensagem();
 		assertEquals("Teste teste", mensagem);
 	}
+
+	@Test
+	void testGetBrand() {
+		card.setNumero("4556346904266753");
+		assertEquals("Visa", card.getBrand());
+	}
+
 
 
 }
