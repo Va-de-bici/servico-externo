@@ -5,7 +5,7 @@ public class Email {
     private String mensagem;
 
     public String getEmail() {
-        return email;
+        return emailD;
     }
 
     public void setEmail(String emailD) {
