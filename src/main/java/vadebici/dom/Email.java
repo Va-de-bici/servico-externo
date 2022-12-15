@@ -9,6 +9,8 @@ public class Email {
         this.mensagem = mensagem;
     }
 
+    public Email(){}
+
     public String getEmail() {
         return emailD;
     }
