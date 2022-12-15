@@ -2,7 +2,7 @@ package vadebici.modelo;
 
 import vadebici.dom.CartaoCredito;
 
-public class CartaoModelo {
+public class CartaoCreditoModelo {
 
     public static CartaoCredito getCartao() {
         CartaoCredito cartao = new CartaoCredito();

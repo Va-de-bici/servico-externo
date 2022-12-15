@@ -13,7 +13,8 @@ public class CartaoCredito {
 		this.cvv = cvv;
 	}
 
-    
+    public CartaoCredito(){}
+        
     public String getNomeTitular() {
         return nomeTitular;
     }
