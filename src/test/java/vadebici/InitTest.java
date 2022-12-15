@@ -10,6 +10,7 @@ public class InitTest {
 
     private final JavalinApp javalinApp = new JavalinApp();
 
+    @Test
     void inicializaServidor_QuandoBemSucedido() {
         javalinApp.start(9000);
         javalinApp.stop();
