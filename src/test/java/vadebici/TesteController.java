@@ -26,10 +26,10 @@ import vadebici.service.ServiceEmail;
 import vadebici.util.JavalinApp;
 import vadebici.util.Segredos;
 import vadebici.util.Validacao;
-import vadebici.modelo.CartaoCreditoModelo;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import kong.unirest.JsonNode;
+import static vadebici.modelo.CartaoCreditoModelo.*;
 
 class ControllerTest {
 	private static JavalinApp app = new JavalinApp();
@@ -130,7 +130,7 @@ class ControllerTest {
 
 	@Test
     void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
-        CartaoCreditoModelo cartao = getCartao();
+        CartaoCredito cartao = getCartao();
         HttpResponse<String> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
                 .body(cartao)
                 .asString();
