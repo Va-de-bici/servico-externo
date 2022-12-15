@@ -1,4 +1,4 @@
-/*package vadebici.modelo;
+package vadebici.modelo;
 
 import vadebici.dom.CartaoCredito;
 
@@ -14,4 +14,4 @@ public class CartaoCreditoModelo {
     }
 }
 
-*/
+

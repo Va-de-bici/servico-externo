@@ -26,6 +26,7 @@ import vadebici.service.ServiceEmail;
 import vadebici.util.JavalinApp;
 import vadebici.util.Segredos;
 import vadebici.util.Validacao;
+impport vadebici.modelo.CartaoCreditoModelo;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import kong.unirest.JsonNode;
