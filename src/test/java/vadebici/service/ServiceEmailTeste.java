@@ -1,4 +1,4 @@
-package vadebici.service;
+/*package vadebici.service;
 
 import org.junit.jupiter.api.Test;
 import vadebici.dom.Email;
@@ -24,5 +24,5 @@ public class ServiceEmailTeste {
         return email;
     }
 }
-
+*/
 
