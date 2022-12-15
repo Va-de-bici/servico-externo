@@ -142,10 +142,11 @@ class ControllerTest {
 	@Test
     void enviaEmail_QuandoBemSucedido() {
         Email email = createEmail();
+		ServiceEmail serviceEmail = new ServiceEmail();
         assertDoesNotThrow(() -> serviceEmail.enviaMensagem(email));
     }
 
-    RequisicaoEmail createEmail() {
+    Email createEmail() {
         Email email = new Email();
         email.setEmail("bruno@edu.unirio.br");
         email.setMensagem("Teste");
