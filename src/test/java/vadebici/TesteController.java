@@ -105,12 +105,38 @@ class ControllerTest {
 		assertEquals("Teste teste", mensagem);
 	}
 
-	/*@Test
-	void testGetBrand() {
+	@Test
+	void testGetBand() {
 		CartaoCredito cartao = new CartaoCredito();
 		cartao.setNumero("4556346904266753");
-		assertEquals("Visa", cartao.getBrand());
-	}*/
+		assertEquals("Visa", cartao.getBand());
+	}
+
+	@Test
+	void enviaEmail_QuandoBemSucedido() {
+        Email email = new Email();
+        email.setEmail("bruno@unirio.br");
+        email.setMensagem("teste externo");
+        HttpResponse<String> response = Unirest.post(BASE_URL+"/enviarEmail")
+                .body(email)
+                .asString();
+
+        assertEquals(200, response.getStatus());
+        assertEquals("", response.getBody());
+    }
+
+	@Test
+    void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
+        CartaoCredito cartao = getCartao();
+        HttpResponse<String> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
+                .body(cartao)
+                .asString();
+
+        assertEquals(200, response.getStatus());
+        assertEquals("VERIFIED", response.getBody());
+    }
+
+
 
 
 
