@@ -12,12 +12,11 @@ public class InitTest {
 
     @Test
     void inicializaServidor_QuandoBemSucedido() {
-        Javalin app = javalinApp.start(9000);
+        javalinApp.start(9000);
 
-        assertNotNull(app);
+        assertNotNull(javalinApp);
 
         javalinApp.stop();
-
     }
 }
 
