@@ -45,6 +45,19 @@ public class CartaoCredito {
     public void setCvv(String cvv) {
         this.cvv = cvv;
     }
+
+    public String getBand() {
+		if (this.getNumero().substring(0, 1).equals("4")) {
+			return "Visa";
+		} else if (this.getNumero().substring(0, 1).equals("5")) {
+			return "MasterCard";
+		} else if (this.getNumero().substring(0, 2).equals("37")) {
+			return "AmericanExpress";
+		} else {
+			return "Sem bandeira";
+		}
+    }
+
 }
 
 
