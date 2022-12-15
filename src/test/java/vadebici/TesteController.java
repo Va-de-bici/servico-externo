@@ -1,7 +1,7 @@
 package vadebici;
 
 import static org.mockito.Mockito.*;
-import main.util.JavalinApp;
+import vadebici.util.JavalinApp;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -44,8 +44,8 @@ class ControllerTest {
 	}
 
 	@Test
-	void cieloIntegracaoTest() {
-		CieloIntegracao cielo = new CieloIntegracao("95061429-4514-431d-8585-befe1ae162da");
+	void TransacaoCieloTest() {
+		TransacaoCielo cielo = new TransacaoCielo("95061429-4514-431d-8585-befe1ae162da");
 		String merchantOrderId = "95061429-4514-431d-8585-befe1ae162da";
 		assertEquals(merchantOrderId, cielo.MerchantOrderId);
 	}
@@ -74,16 +74,16 @@ class ControllerTest {
 	}
 
 	@Test
-	void cartaoDeCreditoFormTest() {
-		CartaoDeCreditoForm cc = new CartaoDeCreditoForm();
-		CartaoDeCreditoForm ccForm = new CartaoDeCreditoForm("Fulano Teste", "0000.0000.0000.0004", "10/2025", "333");
+	void cartaoCreditoFormTest() {
+		CartaoCreditoForm cc = new CartaoCreditoForm();
+		CartaoCreditoForm ccForm = new CartaoCreditoForm("Fulano Teste", "0000.0000.0000.0004", "10/2025", "333");
 		ccForm.desserialize();
 		assertEquals("333", ccForm.cvv);
 	}
 
 	@Test
-	void cartaoDeCreditoTest() {
-		CartaoDeCredito cc = new CartaoDeCredito("Fulano Teste", "0000.0000.0000.0004", "12/2024", "321");
+	void cartaoCreditoTest() {
+		CartaoCredito cc = new CartaoCredito("Fulano Teste", "0000.0000.0000.0004", "12/2024", "321");
 		cc.setCvv("123");
 		String cvv = cc.getCvv();
 		cc.setNumero("0000.0000.0000.0001");
@@ -107,8 +107,8 @@ class ControllerTest {
 
 	@Test
 	void testGetBrand() {
-		card.setNumero("4556346904266753");
-		assertEquals("Visa", card.getBrand());
+		cartao.setNumero("4556346904266753");
+		assertEquals("Visa", cartao.getBrand());
 	}
 
 

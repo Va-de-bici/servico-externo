@@ -4,6 +4,11 @@ public class Email {
     private String emailD;
     private String mensagem;
 
+    public Email(String emailD, String mensagem){
+        this.emailD = emailD;
+        this.mensagem = mensagem;
+    }
+
     public String getEmail() {
         return emailD;
     }
