@@ -9,6 +9,7 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import vadebici.dom.CartaoCredito;
 import vadebici.pagamento.Cobranca;
+import io.javalin.plugin.json.JavalinJson;
 
 
 public class CartaoCreditoController {
@@ -16,7 +17,7 @@ public class CartaoCreditoController {
 	public CartaoCreditoController(){}
 
 	public CartaoCredito retornaCartaoDeCreditoIntegracao() {
-		CartaoCredito card = new CreditCard("Bruno Bastos", "4556346904266753", "03/2024", "118");
+		CartaoCredito card = new CartaoCredito("Bruno Bastos", "4556346904266753", "03/2024", "118");
 		return card;
 	}
 

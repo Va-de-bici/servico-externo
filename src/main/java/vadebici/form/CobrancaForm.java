@@ -36,7 +36,7 @@ public class CobrancaForm {
 	}
 	
 	public CobrancaD deserializePostCobranca(){
-		return new Cobranca(this.ciclistaId, this.valor);
+		return new CobrancaD(this.ciclistaId, this.valor);
 	}
 
 	public String getId() {
