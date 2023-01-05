@@ -14,6 +14,14 @@ public class CobrancaD {
 	public CobrancaD() {
 		
 	}
+
+	public CobrancaD(String ciclistaId, int valor)
+	{
+		this.id = UUID.randomUUID().toString();
+		this.valor = valor;
+		this.ciclistaId = ciclistaId;
+	}
+
 	
 	public CobrancaD(String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, String status){
 		this.id = UUID.randomUUID().toString();
