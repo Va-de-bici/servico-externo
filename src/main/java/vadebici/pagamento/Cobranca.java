@@ -108,7 +108,7 @@ public class Cobranca {
 			GenericApiException error = new GenericApiException();
 			throw new GenericApiException(error.getMessageCobrancaNotFound());
 		}
-	}
+	}*/
 
 	public HttpResponse<JsonNode> sendCobranca() {
 		TransacaoCielo transaction = new TransacaoCielo("1");
@@ -127,7 +127,7 @@ public class Cobranca {
 	}
 
 
-	public ArrayList<CobrancaD> retornarCobrancas() {
+	/*public ArrayList<CobrancaD> retornarCobrancas() {
 
 		ArrayList<CobrancaD> cobrancasRetornadas = new ArrayList<CobrancaD>();
 		cobrancasRetornadas.add(new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", 1));
