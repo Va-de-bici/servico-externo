@@ -124,6 +124,7 @@ public class Cobranca {
 				("Content-Type", "application/json").header("MerchantKey", MERCHANTKEY)
 				.header("MerchantId", MERCHANTID).body(transaction).asJson();
 		return response;
+	}
 
 
 	public ArrayList<CobrancaD> retornarCobrancas() {
