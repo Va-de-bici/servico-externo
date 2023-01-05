@@ -117,7 +117,7 @@ class ControllerTest {
 
 	@Test
 	void getValorCobranca() {
-		Cobranca cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", 10);
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", 10);
 		cobranca.setValor(15);
 		int valor = cobranca.getValor();
 		assertEquals(15, valor);
@@ -125,7 +125,7 @@ class ControllerTest {
 
 	@Test
 	void getCiclistaIdCobranca() {
-		Cobranca cobranca = new Cobranca("a1b2", 10);
+		CobrancaD cobranca = new Cobranca("a1b2", 10);
 		cobranca.setCiclistaId("3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		String id = cobranca.getCiclistaId();
 		assertEquals("3fa85f64-5717-4562-b3fc-2c963f66afa6", id);
