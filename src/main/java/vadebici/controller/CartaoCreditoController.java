@@ -13,7 +13,7 @@ import vadebici.pagamento.Cobranca;
 
 public class CartaoCreditoController {
 
-	private CartaoCreditoController(){}
+	public CartaoCreditoController(){}
 
 	public CartaoCredito retornaCartaoDeCreditoIntegracao() {
 		CartaoCredito card = new CreditCard("Bruno Bastos", "4556346904266753", "03/2024", "118");

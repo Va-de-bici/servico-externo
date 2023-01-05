@@ -110,6 +110,22 @@ public class Cobranca {
 		}
 	}
 
+	public HttpResponse<JsonNode> sendCobranca() {
+		TransacaoCielo transaction = new TransacaoCielo("1");
+		transaction.getCustomer().setName(this.card.getNomeTitular());
+		transaction.getPayment().setAmount(cobranca.getValor());
+		transaction.getPayment().setInstallments(1);
+		transaction.getPayment().setType("CreditCard");
+		transaction.getPayment().getCreditCard().setBrand("Visa");
+		transaction.getPayment().getCreditCard().setCardNumber(card.getNumCartao());
+		transaction.getPayment().getCreditCard().setExpirationDate(card.getDataValidade());
+		transaction.getPayment().getCreditCard().setSecurityCode(card.getCvv());
+		HttpResponse<JsonNode> response = Unirest.post(REQUISICAO).header
+				("Content-Type", "application/json").header("MerchantKey", MERCHANTKEY)
+				.header("MerchantId", MERCHANTID).body(transaction).asJson();
+		return response;
+
+
 	public ArrayList<CobrancaD> retornarCobrancas() {
 
 		ArrayList<CobrancaD> cobrancasRetornadas = new ArrayList<CobrancaD>();
