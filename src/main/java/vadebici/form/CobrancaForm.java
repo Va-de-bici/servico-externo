@@ -16,7 +16,7 @@ public class CobrancaForm {
 		
 	}
 	
-	public CobrancaForm(String id, String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, Status status){
+	public CobrancaForm(String id, String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, String status){
 		this.id = id;
 		this.ciclistaId = ciclistaId;
 		this.horaSolicitacao = horaSolicitacao;
@@ -83,7 +83,7 @@ public class CobrancaForm {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 }

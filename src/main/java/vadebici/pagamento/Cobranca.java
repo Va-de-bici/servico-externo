@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import vadebici.exception.GenericApiException;
-import vadebici.form.cobrancaForm;
+import vadebici.form.CobrancaForm;
 import io.javalin.http.Context;
 import dom.CobrancaD;
 import dom.CartaoCredito;
