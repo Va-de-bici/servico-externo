@@ -1,7 +1,7 @@
 package vadebici.form;
 
 import java.util.UUID;
-import dom.CobrancaD;
+import vadebici.dom.CobrancaD;
 
 public class CobrancaForm {
 	
@@ -31,11 +31,11 @@ public class CobrancaForm {
 		this.valor = valor;
 	}
 	
-	public Cobranca unserialize(){
+	public CobrancaD unserialize(){
 		return new Cobranca(this.id, this.ciclistaId, this.horaSolicitacao, this.horaFinalizacao, this.valor, this.status);
 	}
 	
-	public Cobranca deserializePostCobranca(){
+	public CobrancaD deserializePostCobranca(){
 		return new Cobranca(this.ciclistaId, this.valor);
 	}
 
