@@ -115,7 +115,7 @@ public class Cobranca {
 		cobrancasRetornadas.add(new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", 1));
 		cobrancasRetornadas
 				.add(new CobrancaD("5fc808e4-d59d-4556-8ee7-b2d754b8cdf1", "3fa85f64-5717-4562-b3fc-2c963f66afa7",
-						"2021-09-03T13:23:41.414Z", "2021-09-03T13:25:29.195Z", 7, 'Pendente'));
+						"2021-09-03T13:23:41.414Z", "2021-09-03T13:25:29.195Z", 7, "Pendente"));
 		
 		for (int i = 0; i < cobrancasRetornadas.size(); i++) {
 			FilaCobranca.inserir(cobrancasRetornadas.get(i));
