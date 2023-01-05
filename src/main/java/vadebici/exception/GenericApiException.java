@@ -43,4 +43,9 @@ public class GenericApiException extends RuntimeException {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
+
+    public String getMessageCobrancaNotFound() {
+		return ("Cobrança não encontrada.");
+	}
+
 }

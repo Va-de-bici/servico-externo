@@ -12,6 +12,8 @@ public class JavalinApp {
     private final Javalin app =
             Javalin.create(config -> config.defaultContentType = "application/json")
                     .routes(() -> {
+                        path("/cobranca/:id", ()-> get(Cobranca::getCobranca));
+                        path("/cobranca",  ()-> post(Cobranca::realizaCobranca));
                         path("/enviarEmail", () -> post(EmailController::enviaEmail));
                         path("/validaCartaoDeCredito", () -> post(CartaoCreditoController::validaCartaoCredito));
 
