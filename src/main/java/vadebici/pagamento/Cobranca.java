@@ -14,9 +14,9 @@ import java.util.Objects;
 import vadebici.exception.GenericApiException;
 import vadebici.form.CobrancaForm;
 import io.javalin.http.Context;
-import dom.CobrancaD;
-import dom.CartaoCredito;
-import pagamento.TransacaoCielo;
+import vadebici.dom.CobrancaD;
+import vadebici.dom.CartaoCredito;
+import vadebici.pagamento.TransacaoCielo;
 
 
 public class Cobranca {
