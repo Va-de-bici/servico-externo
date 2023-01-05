@@ -18,6 +18,7 @@ import vadebici.controller.CartaoCreditoController;
 import vadebici.controller.EmailController;
 import vadebici.dom.CartaoCredito;
 import vadebici.dom.Email;
+import vadebici.dom.CobrancaD;
 import vadebici.form.CartaoCreditoForm;
 import vadebici.pagamento.Cobranca; 
 import vadebici.pagamento.Pagamento;
