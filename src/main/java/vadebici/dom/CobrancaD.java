@@ -15,7 +15,7 @@ public class CobrancaD {
 		
 	}
 	
-	public CobrancaD(String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, Status status){
+	public CobrancaD(String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, String status){
 		this.id = UUID.randomUUID().toString();
 		this.ciclistaId = ciclistaId;
 		this.horaSolicitacao = horaSolicitacao;
@@ -24,7 +24,7 @@ public class CobrancaD {
 		this.status = status;
 	}
 	
-	public CobrancaD(String id, String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, Status status){
+	public CobrancaD(String id, String ciclistaId, String horaSolicitacao, String horaFinalizacao, int valor, String status){
 		this.id = id;
 		this.ciclistaId = ciclistaId;
 		this.horaSolicitacao = horaSolicitacao;
