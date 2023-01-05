@@ -59,7 +59,7 @@ public class Cobranca {
 		return response;
 	}
 
-	public static void getCobranca(Context ctx) throws GenericApiException {
+	/*public static void getCobranca(Context ctx) throws GenericApiException {
 		Cobranca daoCobranca = new Cobranca();
 		CobrancaD daoCobrancaD = daoCobranca.consultarCobrancaCobrancaById(Objects.requireNonNull(ctx.pathParam("id")));
 
@@ -71,7 +71,7 @@ public class Cobranca {
 			ctx.html(cobNotFound.getMessageCobrancaNotFound());
 			ctx.status(404);
 		}
-	}
+	}*/
 
 	public static void realizaCobranca(Context ctx) {
 		CobrancaD cobrancaForm = ctx.bodyAsClass(CobrancaForm.class).deserializePostCobranca();
@@ -90,7 +90,7 @@ public class Cobranca {
 		}
 	}
 
-	public CobrancaD consultarCobrancaCobrancaById(String id) throws GenericApiException {
+	/*public CobrancaD consultarCobrancaCobrancaById(String id) throws GenericApiException {
 
 		ArrayList<CobrancaD> cobrancasIdLista = retornarCobrancas();
 		CobrancaD cobrancaId = null;
@@ -117,8 +117,8 @@ public class Cobranca {
 		transaction.getPayment().setInstallments(1);
 		transaction.getPayment().setType("CreditCard");
 		transaction.getPayment().getCreditCard().setBrand("Visa");
-		transaction.getPayment().getCreditCard().setCardNumber(card.getNumCartao());
-		transaction.getPayment().getCreditCard().setExpirationDate(card.getDataValidade());
+		transaction.getPayment().getCreditCard().setCardNumber(card.getNumero());
+		transaction.getPayment().getCreditCard().setExpirationDate(card.getValidade());
 		transaction.getPayment().getCreditCard().setSecurityCode(card.getCvv());
 		HttpResponse<JsonNode> response = Unirest.post(REQUISICAO).header
 				("Content-Type", "application/json").header("MerchantKey", MERCHANTKEY)
@@ -141,7 +141,7 @@ public class Cobranca {
 		
 		return cobrancasRetornadas;
 	}
-
+*/
 
 
 }
