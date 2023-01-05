@@ -32,7 +32,7 @@ public class CobrancaForm {
 	}
 	
 	public CobrancaD unserialize(){
-		return new Cobranca(this.id, this.ciclistaId, this.horaSolicitacao, this.horaFinalizacao, this.valor, this.status);
+		return new CobrancaD(this.id, this.ciclistaId, this.horaSolicitacao, this.horaFinalizacao, this.valor, this.status);
 	}
 	
 	public CobrancaD deserializePostCobranca(){

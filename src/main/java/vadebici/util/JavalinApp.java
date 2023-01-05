@@ -5,6 +5,7 @@ import io.javalin.plugin.json.JavalinJson;
 import vadebici.controller.EmailController;
 import vadebici.controller.CartaoCreditoController;
 import vadebici.exception.GenericApiException;
+import vadebici.pagamento.Cobranca;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
@@ -12,7 +13,7 @@ public class JavalinApp {
     private final Javalin app =
             Javalin.create(config -> config.defaultContentType = "application/json")
                     .routes(() -> {
-                        path("/cobranca/:id", ()-> get(Cobranca::getCobranca));
+                        //path("/cobranca/:id", ()-> get(Cobranca::getCobranca));
                         path("/cobranca",  ()-> post(Cobranca::realizaCobranca));
                         path("/enviarEmail", () -> post(EmailController::enviaEmail));
                         path("/validaCartaoDeCredito", () -> post(CartaoCreditoController::validaCartaoCredito));
