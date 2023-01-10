@@ -4,7 +4,7 @@ import vadebici.form.CobrancaForm;
 import io.javalin.http.Context;
 import vadebici.dom.CobrancaD;
 import vadebici.dom.FilaCobranca;
-import vadebici.controller
+import vadebici.pagamento.Cobranca;
 
 public class FilaCobrancaController {
 	
@@ -36,7 +36,7 @@ public class FilaCobrancaController {
   		FilaCobranca queue = daoFilaController.retornarFilaCobrancaPreenchida();
   		
   		CobrancaD cobrancaDeletada = queue.getQueueCobranca().remove();
-  		CobrancaController cobrar = new CobrancaController();
+  		Cobranca cobrar = new CobrancaController();
   		
   		cobrar.setCobranca(cobrancaDeletada);
   		cobrar.sendCobranca();  		
