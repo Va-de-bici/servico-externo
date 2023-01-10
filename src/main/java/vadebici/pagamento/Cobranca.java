@@ -126,6 +126,11 @@ public class Cobranca {
 		return response;
 	}
 
+	public void setCobranca(CobrancaD cobranca) {
+		this.cobranca = cobranca;
+	}
+
+
 
 	/*public ArrayList<CobrancaD> retornarCobrancas() {
 

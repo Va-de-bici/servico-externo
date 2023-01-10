@@ -1,9 +1,10 @@
 package vadebici.controller;
 
-import form.CobrancaForm;
+import vadebici.form.CobrancaForm;
 import io.javalin.http.Context;
 import vadebici.dom.CobrancaD;
 import vadebici.dom.FilaCobranca;
+import vadebici.controller
 
 public class FilaCobrancaController {
 	
@@ -43,7 +44,7 @@ public class FilaCobrancaController {
   	
   	public FilaCobranca retornarFilaCobrancaPreenchida() {
   		FilaCobranca filaCobrancas = new FilaCobranca();
-  		filaCobrancas.getQueueCobranca().add(new Cobranca("3fa85f62-5717-4562-b3fc-2c963f66afa8", "2019-09-03T13:23:41.414Z", "2019-09-03T13:25:29.195Z", 10, Status.PENDENTE)) ;  		
+  		filaCobrancas.getQueueCobranca().add(new CobrancaD("3fa85f62-5717-4562-b3fc-2c963f66afa8", "2019-09-03T13:23:41.414Z", "2019-09-03T13:25:29.195Z", 10, "Pendente")) ;  		
   		return filaCobrancas;  		
   	}
   
