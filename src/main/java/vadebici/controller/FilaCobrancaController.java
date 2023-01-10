@@ -36,7 +36,7 @@ public class FilaCobrancaController {
   		FilaCobranca queue = daoFilaController.retornarFilaCobrancaPreenchida();
   		
   		CobrancaD cobrancaDeletada = queue.getQueueCobranca().remove();
-  		Cobranca cobrar = new CobrancaController();
+  		Cobranca cobrar = new Cobranca();
   		
   		cobrar.setCobranca(cobrancaDeletada);
   		cobrar.sendCobranca();  		
