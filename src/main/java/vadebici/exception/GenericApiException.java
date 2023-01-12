@@ -16,6 +16,11 @@ public class GenericApiException extends RuntimeException {
         this.mensagem = mensagem;
     }
 
+    public GenericApiException(String message) {
+		
+	}
+
+
     public GenericApiException() {
         super();
     }
