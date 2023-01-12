@@ -27,7 +27,7 @@ public class EmailController {
 
 	}
 
-	public static void enviarEmail(Context ctx) throws MessagingException, IOException {
+	public static void enviaEmail(Context ctx) throws MessagingException, IOException {
 
 		Properties properties = new Properties();
 		properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -60,11 +60,11 @@ public class EmailController {
 
 		try {
 			message.setFrom(new InternetAddress("vadebici@gmail.com"));
-			message.setRecipient(Message.RecipientType.TO, new InternetAddress(emailForm.getEmailD()));
+			message.setRecipient(Message.RecipientType.TO, new InternetAddress(emailForm.getEmail()));
 			message.setSubject("Va de Bici - Teste Externo");
 			
 			MimeBodyPart mimeBodyPart = new MimeBodyPart();
-			mimeBodyPart.setContent(emailForm.getMessage(), "text/html");
+			mimeBodyPart.setContent(emailForm.getMensagem(), "text/html");
 			
 			Multipart multipart = new MimeMultipart();
 			multipart.addBodyPart(mimeBodyPart);
