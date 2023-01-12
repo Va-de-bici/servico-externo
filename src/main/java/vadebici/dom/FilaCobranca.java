@@ -6,6 +6,14 @@ public class FilaCobranca {
 	
 	private static Queue<CobrancaD> queueCobranca;
 
+	public FilaCobranca(Queue<Cobranca> filaCobranca) 
+	{
+		for (Cobranca cobranca : filaCobranca) {
+			this.filaDeCobrancas.add(cobranca);
+		}
+		
+	}
+
 	public static void inserir(CobrancaD cobranca) {
 		queueCobranca.add(cobranca);
 	}

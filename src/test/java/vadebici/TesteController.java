@@ -107,8 +107,8 @@ class ControllerTest {
 	void emailFormTest() {
 		EmailForm ef = new EmailForm();
 		EmailForm email = new EmailForm("email@mail.com", "Teste");
-		email.desserializar();
-		assertEquals("Teste", email.mensagem);
+		email.deserialize();
+		assertEquals("Teste", email.message);
 	}
 
 	@Test
@@ -149,7 +149,7 @@ class ControllerTest {
 		CobrancaForm cobForm = new CobrancaForm("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		CobrancaForm cobrancaForm = new CobrancaForm("3fa85f64-5717-4562-b3fc-2c963f66afa6", 1);
-		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+		CobrancaD cobranca = new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		CobrancaD resultado = cobForm.unserialize();
 		CobrancaD cobrancaPost = cobForm.deserializePostCobranca();
@@ -166,41 +166,25 @@ class ControllerTest {
 			filaCobrancas.add(c);
 		}
 		FilaCobranca filaC = new FilaCobranca(filaDeCobrancas);
-		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+		CobrancaD cobranca = new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 
 		filaDeCobrancas.add(cobranca);
-		filaC.setFilaCobranca(cobranca);
-		assertEquals(filaDeCobrancas, filaC.getFilaCobranca());
+		filaC.setQueueCobranca(cobranca);
+		assertEquals(filaDeCobrancas, filaC.getQueueCobranca());
 	}
 
 	@Test
 	void getIdCobranca() {
-		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+		CobrancaD cobranca = new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		String id = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
 		assertEquals(id, cobranca.getId());
 	}
 
 	@Test
-	void getValorCobranca() {
-		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", 10);
-		cobranca.setValor(15);
-		int valor = cobranca.getValor();
-		assertEquals(15, valor);
-	}
-
-	@Test
-	void getCiclistaIdCobranca() {
-		CobrancaD cobranca = new Cobranca("a1b2", 10);
-		cobranca.setCiclistaId("3fa85f64-5717-4562-b3fc-2c963f66afa6");
-		String id = cobranca.getCiclistaId();
-		assertEquals("3fa85f64-5717-4562-b3fc-2c963f66afa6", id);
-	}
-
-	@Test
 	void getHoraSolicitacaoCobranca() {
-		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+		CobrancaD cobranca = new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		cobranca.setHoraSolicitacao("2022-01-14T20:36:00.491Z");
 		String horaSolicitacao = cobranca.getHoraSolicitacao();
@@ -209,7 +193,7 @@ class ControllerTest {
 
 	@Test
 	void getHoraFinalizacaoCobranca() {
-		Cobranca cobranca = new Cobranca("Paga", "2022-01-14T20:36:00.491Z", "", 10,
+		CobrancaD cobranca = new CobrancaD("Paga", "2022-01-14T20:36:00.491Z", "", 10,
 				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
 		cobranca.setHoraFinalizacao("2022-01-14T20:38:00.491Z");
 		String horaFinalizacao = cobranca.getHoraFinalizacao();
