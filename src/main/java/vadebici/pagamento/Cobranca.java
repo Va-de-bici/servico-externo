@@ -64,14 +64,9 @@ public class Cobranca {
 		Cobranca daoCobranca = new Cobranca();
 		CobrancaD daoCobrancaD = daoCobranca.consultarCobrancaCobrancaById(Objects.requireNonNull(ctx.pathParam("id")));
 
-		if (daoCobranca != null) {
-			ctx.status(200);
-			ctx.json(daoCobranca);
-		} else {
-			GenericApiException cobNotFound = new GenericApiException();
-			ctx.html(cobNotFound.getMessageCobrancaNotFound());
-			ctx.status(404);
-		}
+		ctx.status(200);
+		ctx.json(daoCobranca);
+		
 	}
 
 	public static void realizaCobranca(Context ctx) {
