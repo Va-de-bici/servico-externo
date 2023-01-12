@@ -208,7 +208,7 @@ class ControllerTest {
         Email email = new Email();
         email.setEmail("brunopmunirio@gmail.com");
         email.setMensagem("teste externo");
-        HttpResponse<String> response = Unirest.post(BASE_URL+"/enviaEmail")
+        HttpResponse<String> response = Unirest.post(BASE_URL+"/enviarEmail")
                 .body(email)
                 .asString();
 
