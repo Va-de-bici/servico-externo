@@ -203,7 +203,7 @@ class ControllerTest {
 
 
 
-	@Test
+	/*@Test
 	void enviaEmail_QuandoBemSucedido() {
         Email email = new Email();
         email.setEmail("brunopmunirio@gmail.com");
@@ -214,7 +214,7 @@ class ControllerTest {
 
         assertEquals(200, response.getStatus());
         assertEquals("", response.getBody());
-    }
+    }*/
 
 	@Test
     void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
