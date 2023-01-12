@@ -1,4 +1,4 @@
-package vadebici.service;
+/*package vadebici.service;
 
 import com.mailgun.api.v3.MailgunMessagesApi;
 import com.mailgun.client.MailgunClient;
@@ -27,5 +27,5 @@ public class ServiceEmail {
         mailgunMessagesApi.sendMessage(Segredos.getEmailDomainName(), message);
     }
 }
-
+*/
 
