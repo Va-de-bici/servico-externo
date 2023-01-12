@@ -14,6 +14,11 @@ public class FilaCobranca {
 		
 	}
 
+	public FilaCobranca() 
+	{
+		
+	}
+
 	public static void inserir(CobrancaD cobranca) {
 		queueCobranca.add(cobranca);
 	}
