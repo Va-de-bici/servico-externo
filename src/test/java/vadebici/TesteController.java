@@ -106,7 +106,7 @@ class ControllerTest {
 	@Test
 	void emailFormTest() {
 		EmailForm ef = new EmailForm();
-		EmailForm email = new EmailForm("email@mail.com", "Teste");
+		EmailForm email = new EmailForm("Teste", "email@mail.com");
 		email.deserialize();
 		assertEquals("Teste", email.message);
 	}
@@ -203,7 +203,7 @@ class ControllerTest {
 
 
 
-	/*@Test
+	@Test
 	void enviaEmail_QuandoBemSucedido() {
         Email email = new Email();
         email.setEmail("bruno@unirio.br");
@@ -225,7 +225,7 @@ class ControllerTest {
 
         assertEquals(200, response.getStatus());
         assertEquals("VERIFIED", response.getBody());
-    }*/
+    }
 
 
 }
