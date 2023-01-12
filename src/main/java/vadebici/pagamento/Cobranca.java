@@ -16,6 +16,7 @@ import vadebici.form.CobrancaForm;
 import io.javalin.http.Context;
 import vadebici.dom.CobrancaD;
 import vadebici.dom.CartaoCredito;
+import vadebici.dom.FilaCobranca;
 import vadebici.pagamento.TransacaoCielo;
 import vadebici.controller.CartaoCreditoController;
 
@@ -59,7 +60,7 @@ public class Cobranca {
 		return response;
 	}
 
-	/*public static void getCobranca(Context ctx) throws GenericApiException {
+	public static void getCobranca(Context ctx) throws GenericApiException {
 		Cobranca daoCobranca = new Cobranca();
 		CobrancaD daoCobrancaD = daoCobranca.consultarCobrancaCobrancaById(Objects.requireNonNull(ctx.pathParam("id")));
 
@@ -71,7 +72,7 @@ public class Cobranca {
 			ctx.html(cobNotFound.getMessageCobrancaNotFound());
 			ctx.status(404);
 		}
-	}*/
+	}
 
 	public static void realizaCobranca(Context ctx) {
 		CobrancaD cobrancaForm = ctx.bodyAsClass(CobrancaForm.class).deserializePostCobranca();
@@ -90,7 +91,7 @@ public class Cobranca {
 		}
 	}
 
-	/*public CobrancaD consultarCobrancaCobrancaById(String id) throws GenericApiException {
+	public CobrancaD consultarCobrancaCobrancaById(String id) throws GenericApiException {
 
 		ArrayList<CobrancaD> cobrancasIdLista = retornarCobrancas();
 		CobrancaD cobrancaId = null;
@@ -108,7 +109,7 @@ public class Cobranca {
 			GenericApiException error = new GenericApiException();
 			throw new GenericApiException(error.getMessageCobrancaNotFound());
 		}
-	}*/
+	}
 
 	public HttpResponse<JsonNode> sendCobranca() {
 		TransacaoCielo transaction = new TransacaoCielo("1");
@@ -132,7 +133,7 @@ public class Cobranca {
 
 
 
-	/*public ArrayList<CobrancaD> retornarCobrancas() {
+	public ArrayList<CobrancaD> retornarCobrancas() {
 
 		ArrayList<CobrancaD> cobrancasRetornadas = new ArrayList<CobrancaD>();
 		cobrancasRetornadas.add(new CobrancaD("3fa85f64-5717-4562-b3fc-2c963f66afa6", 1));
@@ -146,7 +147,7 @@ public class Cobranca {
 		
 		return cobrancasRetornadas;
 	}
-*/
+
 
 
 }
