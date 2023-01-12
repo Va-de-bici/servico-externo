@@ -23,9 +23,9 @@ import vadebici.form.CartaoCreditoForm;
 import vadebici.pagamento.Cobranca; 
 import vadebici.pagamento.Pagamento;
 import vadebici.pagamento.TransacaoCielo;
-import vadebici.service.ServiceEmail;
+//import vadebici.service.ServiceEmail;
 import vadebici.util.JavalinApp;
-import vadebici.util.Segredos;
+//import vadebici.util.Segredos;
 import vadebici.util.Validacao;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
@@ -80,9 +80,9 @@ class ControllerTest {
 	@Test
 	void cartaoCreditoFormTest() {
 		CartaoCreditoForm cc = new CartaoCreditoForm();
-		CartaoCreditoForm ccForm = new CartaoCreditoForm("Fulano Teste", "0000.0000.0000.0004", "10/2025", "333");
+		CartaoCreditoForm ccForm = new CartaoCreditoForm("Fulano Teste", "0000.0000.0000.0004", "10/2027", "123");
 		ccForm.deserialize();
-		assertEquals("333", ccForm.cvv);
+		assertEquals("123", ccForm.cvv);
 	}
 
 	@Test
@@ -97,6 +97,14 @@ class ControllerTest {
 		cc.setValidade("12/2025");
 		String validade = cc.getValidade();
 		assertEquals("123", cvv);
+	}
+
+	@Test
+	void emailFormTest() {
+		EmailForm ef = new EmailForm();
+		EmailForm email = new EmailForm("email@mail.com", "Teste");
+		email.desserializar();
+		assertEquals("Teste", email.mensagem);
 	}
 
 	@Test
@@ -132,13 +140,87 @@ class ControllerTest {
 		assertEquals("3fa85f64-5717-4562-b3fc-2c963f66afa6", id);
 	}
 
+	void cobrancaFormTest() {
+		CobrancaForm cf = new CobrancaForm();
+		CobrancaForm cobForm = new CobrancaForm("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		CobrancaForm cobrancaForm = new CobrancaForm("3fa85f64-5717-4562-b3fc-2c963f66afa6", 1);
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		CobrancaD resultado = cobForm.unserialize();
+		CobrancaD cobrancaPost = cobForm.deserializePostCobranca();
+
+		assertEquals(cobranca.getId(), resultado.getId());
+	}
+
+	@Test
+	void filaCobrancaTest() {
+		FilaCobranca fc = new FilaCobranca();
+		Queue<CobrancaD> filaDeCobrancas = new LinkedList<>();
+		Queue<CobrancaD> filaCobrancas = new LinkedList<>();
+		for (CobrancaD c : filaCobrancas) {
+			filaCobrancas.add(c);
+		}
+		FilaCobranca filaC = new FilaCobranca(filaDeCobrancas);
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+
+		filaDeCobrancas.add(cobranca);
+		filaC.setFilaCobranca(cobranca);
+		assertEquals(filaDeCobrancas, filaC.getFilaCobranca());
+	}
+
+	@Test
+	void getIdCobranca() {
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		String id = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
+		assertEquals(id, cobranca.getId());
+	}
+
+	@Test
+	void getValorCobranca() {
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", 10);
+		cobranca.setValor(15);
+		int valor = cobranca.getValor();
+		assertEquals(15, valor);
+	}
+
+	@Test
+	void getCiclistaIdCobranca() {
+		CobrancaD cobranca = new Cobranca("a1b2", 10);
+		cobranca.setCiclistaId("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		String id = cobranca.getCiclistaId();
+		assertEquals("3fa85f64-5717-4562-b3fc-2c963f66afa6", id);
+	}
+
+	@Test
+	void getHoraSolicitacaoCobranca() {
+		CobrancaD cobranca = new Cobranca("3fa85f64-5717-4562-b3fc-2c963f66afa6", "Pendente", "", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		cobranca.setHoraSolicitacao("2022-01-14T20:36:00.491Z");
+		String horaSolicitacao = cobranca.getHoraSolicitacao();
+		assertEquals("2022-01-14T20:36:00.491Z", horaSolicitacao);
+	}
+
+	@Test
+	void getHoraFinalizacaoCobranca() {
+		Cobranca cobranca = new Cobranca("Paga", "2022-01-14T20:36:00.491Z", "", 10,
+				"3fa85f64-5717-4562-b3fc-2c963f66afa6");
+		cobranca.setHoraFinalizacao("2022-01-14T20:38:00.491Z");
+		String horaFinalizacao = cobranca.getHoraFinalizacao();
+		assertEquals("2022-01-14T20:38:00.491Z", horaFinalizacao);
+	}
+
+
+
 
 	/*@Test
 	void enviaEmail_QuandoBemSucedido() {
         Email email = new Email();
         email.setEmail("bruno@unirio.br");
         email.setMensagem("teste externo");
-        HttpResponse<String> response = Unirest.post(BASE_URL+"/enviarEmail")
+        HttpResponse<String> response = Unirest.post(BASE_URL+"/enviaEmail")
                 .body(email)
                 .asString();
 
