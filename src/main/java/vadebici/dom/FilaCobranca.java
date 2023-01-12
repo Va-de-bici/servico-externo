@@ -6,10 +6,10 @@ public class FilaCobranca {
 	
 	private static Queue<CobrancaD> queueCobranca;
 
-	public FilaCobranca(Queue<Cobranca> filaCobranca) 
+	public FilaCobranca(Queue<CobrancaD> filaCobranca) 
 	{
-		for (Cobranca cobranca : filaCobranca) {
-			this.filaDeCobrancas.add(cobranca);
+		for (CobrancaD cobranca : filaCobranca) {
+			this.queueCobranca.add(cobranca);
 		}
 		
 	}
