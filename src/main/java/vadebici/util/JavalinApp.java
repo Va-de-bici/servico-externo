@@ -4,6 +4,7 @@ import io.javalin.Javalin;
 import io.javalin.plugin.json.JavalinJson;
 import vadebici.controller.EmailController;
 import vadebici.controller.CartaoCreditoController;
+import vadebici.controller.FilaCobrancaController;
 import vadebici.exception.GenericApiException;
 import vadebici.pagamento.Cobranca;
 
