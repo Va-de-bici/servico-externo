@@ -16,10 +16,14 @@ import org.mockito.Mock;
 
 import vadebici.controller.CartaoCreditoController;
 import vadebici.controller.EmailController;
+import vadebici.controller.FilaCobrancaController;
 import vadebici.dom.CartaoCredito;
 import vadebici.dom.Email;
 import vadebici.dom.CobrancaD;
+import vadebici.dom.FilaCobranca;
 import vadebici.form.CartaoCreditoForm;
+import vadebici.form.EmailForm;
+import vadebici.form.CobrancaForm;
 import vadebici.pagamento.Cobranca; 
 import vadebici.pagamento.Pagamento;
 import vadebici.pagamento.TransacaoCielo;
