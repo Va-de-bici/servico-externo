@@ -14,7 +14,8 @@ import io.javalin.plugin.json.JavalinJson;
 
 public class CartaoCreditoController {
 
-	public CartaoCreditoController(){}
+	public CartaoCreditoController(){//vazio
+	}
 
 	public CartaoCredito retornaCartaoDeCreditoIntegracao() {
 		CartaoCredito card = new CartaoCredito("Bruno Bastos", "4556346904266753", "03/2024", "118");
