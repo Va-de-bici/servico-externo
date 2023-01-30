@@ -59,7 +59,7 @@ public class EmailController {
 		Email emailForm = ctx.bodyAsClass(EmailForm.class).deserialize();
 
 		try {
-			message.setFrom(new InternetAddress("vadebici@gmail.com"));
+			message.setFrom(new InternetAddress("brunopmunirio@gmail.com"));
 			message.setRecipient(Message.RecipientType.TO, new InternetAddress(emailForm.getEmail()));
 			message.setSubject("Va de Bici - Teste Externo");
 			
