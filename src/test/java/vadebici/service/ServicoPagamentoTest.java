@@ -47,7 +47,7 @@ class ServicoPagamentoTest {
 
     }
 
-    /*@Test
+    @Test
     void realizarCobranca_RealizaTransacao_QuandoBemSucedido() {
         CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
         Ciclista ciclista = getCiclista();
@@ -56,7 +56,7 @@ class ServicoPagamentoTest {
         assertEquals(cobrancaRequisicao.getValor(), resultado.getValor());
         assertEquals(ciclista.getId(), resultado.getCiclista());
         assertEquals("APPROVED", resultado.getStatus());
-    }*/
+    }
 
     @Test
     void realizarCobranca_LancaExcecao_QuandoValorIncorreto() {
