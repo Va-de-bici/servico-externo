@@ -37,8 +37,8 @@ public class JavalinApp {
 
 
     public Javalin start(int port) {
-        this.app.start(port);
-        return null;
+        return this.app.start(port);
+
     }
 
     public void stop() {
