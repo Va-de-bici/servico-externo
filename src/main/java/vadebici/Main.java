@@ -9,12 +9,11 @@ public class Main {
         Database.carregarDados();
         app.start(getHerokuAssignedPort());
     }
-
     private static int getHerokuAssignedPort() {
         String herokuPort = System.getenv("PORT");
         if (herokuPort != null) {
-            return Integer.parseInt(herokuPort);
+          return Integer.parseInt(herokuPort);
         }
         return 7001;
-    }
+      }
 }

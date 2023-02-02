@@ -3,10 +3,8 @@ package vadebici.util;
 import io.javalin.Javalin;
 import io.javalin.plugin.json.JavalinJson;
 import vadebici.controller.EmailController;
-import vadebici.controller.CartaoCreditoController;
-import vadebici.controller.FilaCobrancaController;
+import vadebici.controller.PagamentoController;
 import vadebici.exception.GenericApiException;
-import vadebici.pagamento.Cobranca;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
@@ -14,11 +12,12 @@ public class JavalinApp {
     private final Javalin app =
             Javalin.create(config -> config.defaultContentType = "application/json")
                     .routes(() -> {
-                        path("/cobranca/:id", ()-> get(Cobranca::getCobranca));
-                        path("/cobranca",  ()-> post(Cobranca::realizaCobranca));
-                        path("/filaCobranca",  () -> post(FilaCobrancaController::filaCobranca));
-                        path("/enviarEmail", () -> post(EmailController::enviaEmail));
-                        path("/validaCartaoDeCredito", () -> post(CartaoCreditoController::validaCartaoCredito));
+                        path("/enviarEmail", () -> post(EmailController::enviarEmail));
+                        path("/cobranca", () -> post(PagamentoController::realizarCobranca));
+                        path("/filaCobranca", () -> post(PagamentoController::adicionarNaFilaCobranca));
+                        path("/processaCobrancasEmFila", () -> post(PagamentoController::processaCobrancasEmFila));
+                        path("/cobranca/:idCobranca", () -> get(PagamentoController::buscarCobranca));
+                        path("/validaCartaoDeCredito", () -> post(PagamentoController::validarCartao));
 
                     }).error(500, ctx -> {
                         GenericApiException ex = new GenericApiException(500, "Ocorreu um erro durante a operação");
@@ -45,6 +44,3 @@ public class JavalinApp {
         this.app.stop();
     }
 }
-
-
-

@@ -1,16 +1,16 @@
-/*package vadebici.controller;
+package vadebici.controller;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import vadebici.dom.Email;
+import vadebici.dom.RequisicaoEmail;
 import vadebici.util.JavalinApp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EmailControllerTeste {
+public class EmailControllerTest {
     private final static JavalinApp app = new JavalinApp();
     private static final String BASE_URL = "http://localhost:7010";
 
@@ -25,17 +25,15 @@ public class EmailControllerTeste {
     }
 
     @Test
-    void enviaEmail_QuandoCerto() {
-        Email email = new Email();
-        email.setEmail("bruno@unirio.br");
-        email.setMensagem("teste pm externo");
+    void enviaEmail_QuandoBemSucedido() {
+        RequisicaoEmail requisicaoEmail = new RequisicaoEmail();
+        requisicaoEmail.setEmail("brunobastos@edu.unirio.br");
+        requisicaoEmail.setMensagem("Mensagem para teste");
         HttpResponse<String> response = Unirest.post(BASE_URL+"/enviarEmail")
-                .body(email)
+                .body(requisicaoEmail)
                 .asString();
 
         assertEquals(200, response.getStatus());
         assertEquals("", response.getBody());
     }
 }
-
-*/

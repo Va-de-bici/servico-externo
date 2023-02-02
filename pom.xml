@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>grupo-b</groupId>
+    <groupId>vadebici</groupId>
     <artifactId>servico-externo</artifactId>
     <version>1.0</version>
 
     <packaging>jar</packaging>
 
     <properties>
-        <sonar.organization>pm-2022-2-grupo-b</sonar.organization>
+        <sonar.projectKey>pm-grupo-va-de-bike_projeto-programacao-modular-unirio-externo</sonar.projectKey>
+        <sonar.organization>pm-grupo-va-de-bike</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -20,9 +24,10 @@
         <unirest-java.version>3.11.11</unirest-java.version>
         <slf4j-simple.version>1.7.30</slf4j-simple.version>
         <hibernate-validator.version>7.0.4.Final</hibernate-validator.version>
+        <mailgun.version>1.0.0</mailgun.version>
         <mockito.version>2.0.2-beta</mockito.version>
         <jackson.version>2.13.3</jackson.version>
-<exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
+        <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
         <!-- JaCoCo thresholds. Increase gradually as you add tests. -->
         <jacoco.unit-tests.limit.instruction-ratio>0%</jacoco.unit-tests.limit.instruction-ratio>
         <jacoco.unit-tests.limit.branch-ratio>0%</jacoco.unit-tests.limit.branch-ratio>
@@ -35,6 +40,11 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mailgun</groupId>
+            <artifactId>mailgun-java</artifactId>
+            <version>${mailgun.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -60,32 +70,15 @@
             <version>${javalin.version}</version>
         </dependency>
         <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>1.6.2</version>
-        </dependency>
-        <dependency>
             <groupId>com.konghq</groupId>
             <artifactId>unirest-java</artifactId>
             <version>${unirest-java.version}</version>
         </dependency>
-        <!-- A dependencia abaixo e um logger -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j-simple.version}</version>
         </dependency>
-        <dependency>
-			<groupId>org.apache.commons</groupId>
-		    <artifactId>commons-email</artifactId>
-		    <version>1.5</version>
-		</dependency>
-        <dependency>
-		    <groupId>javax.mail</groupId>
-		    <artifactId>javax.mail-api</artifactId>
-		    <version>1.6.2</version>
-		</dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -96,6 +89,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -185,7 +183,7 @@
                 <version>${heroku-maven-plugin.version}</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
-                    <appName>va-de-bici-externo</appName>
+                    <appName>va-de-bike-externo</appName>
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
                         <web>java $JAVA_OPTS -jar target/servico-externo-1.0-jar-with-dependencies.jar</web>
@@ -217,7 +215,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>echo.Main</mainClass>
+                            <mainClass>vadebici.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
