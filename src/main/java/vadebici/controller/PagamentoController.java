@@ -34,7 +34,7 @@ public class PagamentoController {
     public static void validarCartao(Context ctx) {
         String body = ctx.body();
         Cartao cartao = JavalinJson.getFromJsonMapper().map(body, Cartao.class);
-        String resultado = servicoPagamento.validarCartao(cartao);
+        servicoPagamento.validarCartao(cartao);
         ctx.status(200);
         ctx.result(JavalinJson.toJson("Cartão validado com sucesso!"));
 

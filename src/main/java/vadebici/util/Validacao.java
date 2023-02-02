@@ -18,6 +18,10 @@ public class Validacao {
                 .buildValidatorFactory()
                 .getValidator();
     }
+
+    private Validacao() {//teste
+
+    }
     public static void validarCampos(Object instancia) {
         verificarConstraints(validator.validate(instancia));
     }

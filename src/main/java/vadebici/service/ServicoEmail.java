@@ -11,7 +11,7 @@ public class ServicoEmail {
     private final MailgunMessagesApi mailgunMessagesApi;
 
     public ServicoEmail() {
-        mailgunMessagesApi = MailgunClient.config(Segredos.getEmailApiKey())
+        mailgunMessagesApi = MailgunClient.config(Segredos.getMailgunAccess())
                 .createApi(MailgunMessagesApi.class);
     }
 

@@ -24,7 +24,7 @@ class ServicoPagamentoTest {
 
         when(servicoAluguelMock.getCiclista(any())).thenReturn(getCiclista());
     }
-    /*@Test
+    @Test
     void validaCartao_RetornaVerificado_QuandoBemSucedido() {
         Cartao cartaoValido = getCartao();
         String status = servicoPagamento.validarCartao(cartaoValido);
@@ -64,5 +64,5 @@ class ServicoPagamentoTest {
         cobrancaRequisicao.setValor(-1.0);
         GenericApiException ex = assertThrows(GenericApiException.class, () -> servicoPagamento.realizarCobranca(cobrancaRequisicao));
         assertEquals(422, ex.getCodigo());
-    }*/
+    }
 }
