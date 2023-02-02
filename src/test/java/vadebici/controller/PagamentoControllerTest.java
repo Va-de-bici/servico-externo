@@ -67,6 +67,7 @@ public class PagamentoControllerTest {
         assertEquals(cobranca.getCiclista(), jsonResponse.get("ciclista"));
         assertEquals(cobranca.getStatus(), jsonResponse.get("status"));
 
+
     }
 
     @Test
