@@ -109,10 +109,6 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("id"));
     }
 
-    @Test
-    void adicionarNaFilaCobranca() {
-    }
-
     DateFormat getDateFormat() {
         return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     }
