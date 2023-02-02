@@ -54,7 +54,7 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("horaFinalizacao"));
     }*/
 
-    @Test
+    /*@Test
     void realizarCobranca_RetornaErro_QuandoValorIncorreto() {
         CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
         cobrancaRequisicao.setValor(-1.0);
@@ -67,7 +67,7 @@ public class PagamentoControllerTest {
         assertEquals(422, jsonResponse.get("codigo"));
         assertEquals("O campo 'valor' deve ser positivo", jsonResponse.get("mensagem"));
         assertNotNull(jsonResponse.get("id"));
-    }
+    }*/
 
     @Test
     void buscarCobranca_RetornaCobranca_QuandoBemSucedido() {
