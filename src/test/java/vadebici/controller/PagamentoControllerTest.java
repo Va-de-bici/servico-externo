@@ -37,7 +37,7 @@ public class PagamentoControllerTest {
         Database.carregarDados();
     }
 
-    /*@Test
+    @Test
     void realizarCobranca_RetornaCobranca_QuandoBemSucedido() {
         CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
         HttpResponse<JsonNode> response = Unirest.post(BASE_URL+"/cobranca")
@@ -52,9 +52,9 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("id"));
         assertNotNull(jsonResponse.get("horaSolicitacao"));
         assertNotNull(jsonResponse.get("horaFinalizacao"));
-    }*/
+    }
 
-    /*@Test
+    @Test
     void realizarCobranca_RetornaErro_QuandoValorIncorreto() {
         CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
         cobrancaRequisicao.setValor(-1.0);
@@ -67,7 +67,7 @@ public class PagamentoControllerTest {
         assertEquals(422, jsonResponse.get("codigo"));
         assertEquals("O campo 'valor' deve ser positivo", jsonResponse.get("mensagem"));
         assertNotNull(jsonResponse.get("id"));
-    }*/
+    }
 
     @Test
     void buscarCobranca_RetornaCobranca_QuandoBemSucedido() {
@@ -83,7 +83,7 @@ public class PagamentoControllerTest {
         assertEquals(cobranca.getStatus(), jsonResponse.get("status"));
     }
 
-    /*@Test
+    @Test
     void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
         Cartao cartao = getCartao();
         HttpResponse<String> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
@@ -91,9 +91,9 @@ public class PagamentoControllerTest {
                 .asString();
 
         assertEquals(200, response.getStatus());
-    }*/
+    }
 
-    /*@Test
+    @Test
     void validarCartao_RetornaErro_QuandoNumeroInvalido() {
         Cartao cartao = getCartao();
         cartao.setNumero("000000000000000");
@@ -106,7 +106,7 @@ public class PagamentoControllerTest {
         assertEquals(422, response.getStatus());
         assertEquals(422, jsonResponse.get("codigo"));
         assertNotNull(jsonResponse.get("id"));
-    }*/
+    }
 
     DateFormat getDateFormat() {
         return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
