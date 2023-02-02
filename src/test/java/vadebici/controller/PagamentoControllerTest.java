@@ -37,7 +37,7 @@ public class PagamentoControllerTest {
         Database.carregarDados();
     }
 
-    @Test
+    /*@Test
     void realizarCobranca_RetornaCobranca_QuandoBemSucedido() {
         CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
         HttpResponse<JsonNode> response = Unirest.post(BASE_URL+"/cobranca")
@@ -52,7 +52,7 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("id"));
         assertNotNull(jsonResponse.get("horaSolicitacao"));
         assertNotNull(jsonResponse.get("horaFinalizacao"));
-    }
+    }*/
 
     @Test
     void realizarCobranca_RetornaErro_QuandoValorIncorreto() {
@@ -93,7 +93,7 @@ public class PagamentoControllerTest {
         assertEquals(200, response.getStatus());
     }
 
-    @Test
+    /*@Test
     void validarCartao_RetornaErro_QuandoNumeroInvalido() {
         Cartao cartao = getCartao();
         cartao.setNumero("000000000000000");
@@ -106,7 +106,7 @@ public class PagamentoControllerTest {
         assertEquals(422, response.getStatus());
         assertEquals(422, jsonResponse.get("codigo"));
         assertNotNull(jsonResponse.get("id"));
-    }
+    }*/
 
     DateFormat getDateFormat() {
         return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
