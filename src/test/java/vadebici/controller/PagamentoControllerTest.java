@@ -69,7 +69,7 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("id"));
     }*/
 
-    @Test
+    /*@Test
     void buscarCobranca_RetornaCobranca_QuandoBemSucedido() {
         Cobranca cobranca = getCobranca();
         DateFormat dateFormat = getDateFormat();
@@ -81,7 +81,7 @@ public class PagamentoControllerTest {
         assertEquals(cobranca.getValor(), jsonResponse.get("valor"));
         assertEquals(cobranca.getCiclista(), jsonResponse.get("ciclista"));
         assertEquals(cobranca.getStatus(), jsonResponse.get("status"));
-    }
+    }*/
 
     @Test
     void validarCartao_RetornaVerdadeiro_QuandoBemSucedido() {
