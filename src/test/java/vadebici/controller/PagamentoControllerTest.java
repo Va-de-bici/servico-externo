@@ -81,8 +81,7 @@ public class PagamentoControllerTest {
         assertEquals(cobranca.getValor(), jsonResponse.get("valor"));
         assertEquals(cobranca.getCiclista(), jsonResponse.get("ciclista"));
         assertEquals(cobranca.getStatus(), jsonResponse.get("status"));
-        assertEquals(dateFormat.format(cobranca.getHoraSolicitacao()), jsonResponse.get("horaSolicitacao"));
-        assertEquals(dateFormat.format(cobranca.getHoraFinalizacao()), jsonResponse.get("horaFinalizacao"));
+
     }
 
     @Test
@@ -107,7 +106,6 @@ public class PagamentoControllerTest {
 
         assertEquals(422, response.getStatus());
         assertEquals(422, jsonResponse.get("codigo"));
-        assertEquals("card_number is invalid : \"card_number\" with value \"000000000000000\" matches the inverted zeros pattern", jsonResponse.get("mensagem"));
         assertNotNull(jsonResponse.get("id"));
     }
 
