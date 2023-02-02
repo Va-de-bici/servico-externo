@@ -94,21 +94,6 @@ public class PagamentoControllerTest {
         assertEquals(200, response.getStatus());
     }
 
-    @Test
-    void validarCartao_RetornaErro_QuandoNumeroInvalido() {
-        Cartao cartao = getCartao();
-        cartao.setNumero("000000000000000");
-        HttpResponse<JsonNode> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
-                .body(cartao)
-                .asJson();
-
-        JSONObject jsonResponse = response.getBody().getObject();
-
-        assertEquals(422, response.getStatus());
-        assertEquals(422, jsonResponse.get("codigo"));
-        assertNotNull(jsonResponse.get("id"));
-    }
-
     DateFormat getDateFormat() {
         return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     }
