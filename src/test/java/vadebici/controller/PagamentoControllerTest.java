@@ -54,6 +54,21 @@ public class PagamentoControllerTest {
         assertNotNull(jsonResponse.get("horaFinalizacao"));
     }*/
 
+    /*@Test
+    void realizarCobranca_RetornaErro_QuandoValorIncorreto() {
+        CobrancaRequisicao cobrancaRequisicao = getCobrancaRequisicao();
+        cobrancaRequisicao.setValor(-1.0);
+        HttpResponse<JsonNode> response = Unirest.post(BASE_URL+"/cobranca")
+                .body(cobrancaRequisicao)
+                .asJson();
+        JSONObject jsonResponse = response.getBody().getObject();
+
+        assertEquals(422, response.getStatus());
+        assertEquals(422, jsonResponse.get("codigo"));
+        assertEquals("O campo 'valor' deve ser positivo", jsonResponse.get("mensagem"));
+        assertNotNull(jsonResponse.get("id"));
+    }*/
+
     @Test
     void buscarCobranca_RetornaCobranca_QuandoBemSucedido() {
         Cobranca cobranca = getCobranca();
@@ -66,9 +81,6 @@ public class PagamentoControllerTest {
         assertEquals(cobranca.getValor(), jsonResponse.get("valor"));
         assertEquals(cobranca.getCiclista(), jsonResponse.get("ciclista"));
         assertEquals(cobranca.getStatus(), jsonResponse.get("status"));
-
-
-
     }
 
     /*@Test
@@ -79,6 +91,21 @@ public class PagamentoControllerTest {
                 .asString();
 
         assertEquals(200, response.getStatus());
+    }*/
+
+    /*@Test
+    void validarCartao_RetornaErro_QuandoNumeroInvalido() {
+        Cartao cartao = getCartao();
+        cartao.setNumero("000000000000000");
+        HttpResponse<JsonNode> response = Unirest.post(BASE_URL+"/validaCartaoDeCredito")
+                .body(cartao)
+                .asJson();
+
+        JSONObject jsonResponse = response.getBody().getObject();
+
+        assertEquals(422, response.getStatus());
+        assertEquals(422, jsonResponse.get("codigo"));
+        assertNotNull(jsonResponse.get("id"));
     }*/
 
     DateFormat getDateFormat() {
